@@ -16,7 +16,7 @@ services:
       - "traefik.tcp.routers.icecast-ruedesgardes-tcp.service=icecast-ruedesgardes-tcp"
       - "traefik.tcp.routers.icecast-ruedesgardes-tcp.entrypoints=http"
       - "traefik.http.services.icecast-ruedesgardes.loadbalancer.server.port=8000"
-      - "traefik.http.routers.icecast-ruedesgardes.service=icecast-ruedesgardes-tcp"
+      - "traefik.http.routers.icecast-ruedesgardes.service=icecast-ruedesgardes"
       - "traefik.http.routers.icecast-ruedesgardes.entrypoints=http"
     env_file: .env
     networks:
