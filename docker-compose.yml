@@ -1,5 +1,12 @@
 version: '3'
 
+networks:
+  default:
+    internal: true
+  public:
+    external:
+      name: net-pastis-hosting-docker_public
+
 services:
   icecast:
     image: infiniteproject/icecast:latest
@@ -8,3 +15,6 @@ services:
       - "traefik.tcp.routers.icecast-ruedesgardes-tcp.service=icecast-ruedesgardes-tcp"
       - "traefik.tcp.routers.icecast-ruedesgardes-tcp.entrypoints=http"
     env_file: .env
+    networks:
+      - default
+      - public
