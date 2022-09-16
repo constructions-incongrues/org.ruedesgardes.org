@@ -11,6 +11,7 @@ services:
   icecast:
     image: infiniteproject/icecast:latest
     labels:
+      - "traefik.enable=true"
       - "traefik.tcp.services.icecast-ruedesgardes-tcp.loadbalancer.server.port=8000"
       - "traefik.tcp.routers.icecast-ruedesgardes-tcp.service=icecast-ruedesgardes-tcp"
       - "traefik.tcp.routers.icecast-ruedesgardes-tcp.entrypoints=http"
