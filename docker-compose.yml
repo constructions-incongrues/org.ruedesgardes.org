@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  icecast:
+    image: infiniteproject/icecast:latest
+    labels:
+      - "traefik.tcp.services.icecast-ruedesgardes-tcp.loadbalancer.server.port=8000"
+      - "traefik.tcp.routers.icecast-ruedesgardes-tcp.service=icecast-ruedesgardes-tcp"
+      - "traefik.tcp.routers.icecast-ruedesgardes-tcp.entrypoints=http"
+    env_file: .env
