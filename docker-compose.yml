@@ -18,6 +18,7 @@ services:
       - "traefik.http.services.icecast-ruedesgardes.loadbalancer.server.port=8000"
       - "traefik.http.routers.icecast-ruedesgardes.service=icecast-ruedesgardes"
       - "traefik.http.routers.icecast-ruedesgardes.entrypoints=http"
+       "traefik.http.routers.icecast-ruedesgardes.rule=Host(`stream.ruedesgardes.org`)"
     env_file: .env
     networks:
       - default
